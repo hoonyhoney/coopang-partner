@@ -18,9 +18,6 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ChromiumDriver extends BrowserDriver<ChromeDriver> {
 
-	private final MyCollector myCollector;
-	private final ChromeDriverDownloader chromeDriverDownloader;
-
 	private String[] userAgents = {
 		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246", //Windows 10-based PC using Edge browser
 		"Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36", //Chrome OS-based laptop using Chrome browser (Chromebook)

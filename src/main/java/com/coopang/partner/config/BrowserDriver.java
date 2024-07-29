@@ -101,6 +101,16 @@ public abstract class BrowserDriver<T extends ChromeDriver> {
     return element;
   }
 
+  public WebElement findElementByName(String name){
+    WebElement element = null;
+    try{
+      element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.name(name)));
+    } catch (WebDriverException e){
+      log.error("{} 오브젝트를 불러오는데 실패했습니다.", name);
+    }
+    return element;
+  }
+
   /**
    * 탭 닫기
    */
