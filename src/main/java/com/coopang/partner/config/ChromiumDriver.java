@@ -57,8 +57,8 @@ public class ChromiumDriver extends BrowserDriver<ChromeDriver> {
 	}
 
 	private void setByOs() {
-		//System.setProperty("webdriver.chrome.driver", "D:/hermes/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "/google/chromedriver-linux64/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "F:/spring-project/chromedriver-win64/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "/google/chromedriver-linux64/chromedriver");
 
 		// 웹 브라우저 프로필 설정
 		options = new ChromeOptions();
@@ -74,8 +74,8 @@ public class ChromiumDriver extends BrowserDriver<ChromeDriver> {
 	public void initChromeDriver() {
 //		chromeDriverDownloader.updateLatestDriver();
 		setByOs();
-		setHeadless();
-		setCustomOption();
+		//setHeadless();
+		//setCustomOption();
 		this.driver = new ChromeDriver(options);
 		this.driverWait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
 	}

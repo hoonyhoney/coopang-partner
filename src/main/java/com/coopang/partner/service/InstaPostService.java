@@ -2,22 +2,28 @@ package com.coopang.partner.service;
 
 
 import com.coopang.partner.config.ChromiumDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import lombok.RequiredArgsConstructor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class InstaPostService {
-
+  private final ChromiumDriver driver;
   @Value("${spring.insta.username}")
   private String username;
 
   @Value("${spring.insta.password}")
   private String password;
-   ChromiumDriver driver = new ChromiumDriver();
 
-   private void uploadPost(){
+
+   public void uploadPost(){
      try {
        driver.open("https://www.instagram.com/accounts/login/");
        driver.wait(5000);
