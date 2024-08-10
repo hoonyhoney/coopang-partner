@@ -50,13 +50,13 @@ public abstract class BrowserDriver<T extends ChromeDriver> {
   /**
    * Selector가 로드 됐을 때 리스트로 불러오기
    */
-  public List<WebElement> findAllByCss(String selector) {
+  public List<WebElement> findAllByClassName(String className) {
     List<WebElement> elements = null;
     try {
       elements = driverWait.until(
-          ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(selector)));
+          ExpectedConditions.presenceOfAllElementsLocatedBy(By.className(className)));
     } catch (WebDriverException e) {
-      log.error("{} 오브젝트를 불러오는데 실패했습니다.", selector);
+      log.error("{} 오브젝트를 불러오는데 실패했습니다.", className);
     }
     return elements;
   }
